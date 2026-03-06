@@ -13,7 +13,7 @@
     },
 
     "ServerStorage": {
-      "Modules": {
+      "ServerModules": {
         "$path": "src/serverModules"
       }
     },
