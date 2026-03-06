@@ -1,0 +1,46 @@
+{
+  "name": "Modded cube combination",
+  "tree": {
+    "$className": "DataModel",
+
+    "ReplicatedStorage": {
+      "SharedModules": {
+        "$path": "src/sharedModules"
+      },
+      "CubeModels": {
+        "$className": "Folder"
+      }
+    },
+
+    "ServerStorage": {
+      "Modules": {
+        "$path": "src/serverModules"
+      }
+    },
+
+    "ServerScriptService": {
+      "Server": {
+        "$path": "src/serverScriptService"
+      }
+    },
+
+    "StarterPlayer": {
+      "StarterPlayerScripts": {
+        "Client": {
+          "$path": "src/starterPlayer"
+        }
+      },
+      "StarterCharacterScripts": {
+        "Client": {
+          "$path": "src/starterCharacter"
+        }
+      }
+    },
+
+    "Workspace": {
+      "Cubes": {
+        "$className": "Folder"
+      }
+    }
+  }
+}
