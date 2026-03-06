@@ -21,6 +21,8 @@ function module.NewCube(class, pos)
 	clone.Touched:Connect(function(part)
 		if not (part:IsDescendantOf(Workspace.Cubes)) then
 			return
+		else
+			module.Merge(clone, part)
 		end
 	end)
 end

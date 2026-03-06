@@ -10,7 +10,7 @@ local CubesInfo = require(ReplicatedStorage.SharedModules.Cubes)
 
 task.wait(3)
 
-local spawnZone = workspace:findFirstChild("SpawnZone")
+local spawnZone = workspace:FindFirstChild("SpawnZone")
 
 if not spawnZone then
 	return
