@@ -1,20 +1,32 @@
 local cubes = {
 	RawInfo = {
 		[1] = {
-			["Name"] = "TestCube01",
+			["Name"] = "bluecube",
 		},
 		[2] = {
-			["Name"] = "TestCube02",
+			["Name"] = "redcube",
 		},
 		[3] = {
-			["Name"] = "TestCube03",
+			["Name"] = "greencube",
+		},
+		[4] = {
+			["Name"] = "purplecube",
+		},
+		[5] = {
+			["Name"] = "yellowcube",
+		},
+		[6] = {
+			["Name"] = "magentacube",
+		},
+		[7] = {
+			["Name"] = "whitecube",
 		},
 	},
-	CubeNames = {
-		TestCube01 = 1,
-		TestCube02 = 2,
-		TestCube03 = 3,
-	},
+	CubeNames = {},
 }
+
+for index, cube in pairs(cubes.RawInfo) do
+	cubes.CubeNames[cube.Name] = index
+end
 
 return cubes

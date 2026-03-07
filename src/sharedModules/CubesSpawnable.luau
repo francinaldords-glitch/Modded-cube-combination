@@ -1,0 +1,5 @@
+return {
+	"redcube",
+	"greencube",
+	"bluecube",
+}
