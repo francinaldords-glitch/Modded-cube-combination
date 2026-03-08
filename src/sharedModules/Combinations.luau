@@ -14,4 +14,9 @@ return {
 		["Cube2"] = "greencube",
 		["Result"] = "yellowcube",
 	},
+	[4] = {
+		["Cube1"] = "purplecube",
+		["Cube2"] = "greencube",
+		["Result"] = "whitecube",
+	},
 }
