@@ -69,9 +69,9 @@ UserInputService.InputBegan:Connect(function(input, gameProcessed)
 		local lerp = partPos:Lerp(charPos, 0.05)
 		draggingPart.Position = lerp
 		draggingPart.Orientation += Vector3.new(
-			math.random(1, 100) / 100,
-			math.random(1, 100) / 100,
-			math.random(1, 100) / 100
+			math.random(1, 100) / 200,
+			math.random(1, 100) / 200,
+			math.random(1, 100) / 200
 		)
 	until not isHolding or not draggingPart or draggingPart.Parent ~= workspace.Cubes
 	if isHolding then
