@@ -8,11 +8,20 @@ local modules = ReplicatedStorage.SharedModules
 local Configuration = require(modules.Configuration)
 local CubeInfo = require(modules.Cubes)
 
+local highLIght = Instance.new("Highlight")
+
 local mouse = lp:GetMouse()
 local actualTarget = nil
 
 RunService.RenderStepped:Connect(function()
-	local target = mouse.Targe
+	if actualTarget and actualTarget.Parent == workspace.Cubes then
+		highLIght.Adornee = actualTarget
+		highLIght.Parent = actualTarget
+	else
+		highLIght.Adornee = nil
+		highLIght.Parent = script
+	end
+	local target = mouse.Target
 	if not target then
 		actualTarget = nil
 		return
@@ -62,7 +71,13 @@ UserInputService.InputBegan:Connect(function(input, gameProcessed)
 	repeat
 		task.wait()
 		local partPos: Vector3 = draggingPart and draggingPart.Position
-		local charPos: Vector3 = lp.Character and lp.Character.HumanoidRootPart.Position + Vector3.new(0, 5, 0)
+		local rootPartPos = lp.Character
+			and lp.Character:FindFirstChild("HumanoidRootPart")
+			and lp.Character.HumanoidRootPart.Position
+		local dist = (mouse.Hit.Position - rootPartPos).Magnitude
+		local clamp = math.clamp(dist, 0, Configuration.MaxGrabDistance)
+		local direction = (mouse.Hit.Position - rootPartPos).Unit
+		local charPos = rootPartPos + (direction * clamp)
 		if not (partPos and charPos) then
 			break
 		end
