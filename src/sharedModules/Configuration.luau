@@ -1,0 +1,3 @@
+return {
+	["MaxGrabDistance"] = 25,
+}
